@@ -17,36 +17,18 @@
               sans: ['Inter', 'sans-serif'],
             },
             colors: {
-              primary: {
-                DEFAULT: '#4F46E5',
-                '50': '#EEF2FF',
-                '100': '#E0E7FF',
-                '200': '#C7D2FE',
-                '300': '#A5B4FC',
-                '400': '#818CF8',
-                '500': '#6366F1',
-                '600': '#4F46E5',
-                '700': '#4338CA',
-                '800': '#3730A3',
-                '900': '#312E81',
-              },
-              accent: {
-                DEFAULT: '#F97316',
-                '50': '#FFF7ED',
-                '100': '#FFEDD5',
-                '200': '#FED7AA',
-                '300': '#FDBA74',
-                '400': '#FB923C',
-                '500': '#F97316',
-                '600': '#EA580C',
-                '700': '#C2410C',
-                '800': '#9A3412',
-                '900': '#7C2D12',
-              }
+              primary: '#5A3DF4',
+              'primary-dark': '#482db3', /* Darker shade for hover states */
+              secondary: '#FF7A00',
+              black: '#000000',
+              'gray-dark': '#333333',
+              'gray-light': '#F8F8F8',
+              'gray-border': '#E5E5E5',
             },
             boxShadow: {
-              'card': '0 4px 15px rgba(0, 0, 0, 0.05)',
-              'card-hover': '0 8px 30px rgba(0, 0, 0, 0.1)',
+              'sm': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+              'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+              'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
             },
           }
         }
@@ -74,6 +56,40 @@
   input[type='number'] {
     -moz-appearance: textfield; /* Firefox */
   }
+  
+  /* Custom animations for LoadingJualinAja component */
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes bounce-letter {
+    0%, 40%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 1.5s linear infinite;
+  }
+
+  .animate-bounce-letter {
+    animation: bounce-letter 1.8s infinite;
+    display: inline-block; /* Required for transform */
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
 </style>
 <link rel="stylesheet" href="/index.css">
   <script type="importmap">
@@ -82,13 +98,25 @@
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.2.12",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "fs/": "https://aistudiocdn.com/fs@^0.0.1-security/",
+    "crypto": "https://aistudiocdn.com/crypto@^1.0.1",
+    "ajv": "https://aistudiocdn.com/ajv@^8.17.1",
+    "ajv-formats": "https://aistudiocdn.com/ajv-formats@^3.0.1",
+    "typescript": "https://aistudiocdn.com/typescript@^5.9.3"
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-BcCD5Biq.js"></script>
+  <script type="module" crossorigin src="./assets/index-BOY9XL7k.js"></script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- Reports for internal review after code changes -->
+    <script type="application/json" src="/ANALYSIS_REPORT.md"></script>
+    <script type="application/json" src="/CLEANUP_REPORT.md"></script>
   </body>
 </html>
